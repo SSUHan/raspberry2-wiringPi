@@ -36,13 +36,17 @@ void set8(uint8_t value){
 	int i;
 	for(i=0;i<8;i++){
 		int mask = 0b1 << i;
+		fprintf(stderr, MY_STRING "i:%d -> value :%#o\n", i, value);
+		fprintf(stderr, MY_STRING "i:%d -> mask : %#o\n",i, mask);
+		fprintf(stderr, MY_STRING "i:%d -> value & mask : %d\n", i, value&mask);
 		if((value & mask) == 0)
 			digitalWrite(SDATA, 0);
-		else{
+		else
 			digitalWrite(SDATA, 1);
-			digitalWrite(SHR_CLK, 0);
-			digitalWrite(SHR_CLK, 1);
-		}
+		digitalWrite(SHR_CLK, 0);
+		digitalWrite(SHR_CLK, 1);
+		
+		delay(100);
 	}
 	// latch
 	digitalWrite(STR_CLK, 0);
@@ -64,8 +68,10 @@ int main(){
 	init();
 
 	for(i=0;i<8; i++){
+		fprintf(stderr, "\n");
 		set8(arr[i]);
 		delay(1000);
+		fprintf(stderr, "\n");
 	}
 	return 1;
 }
