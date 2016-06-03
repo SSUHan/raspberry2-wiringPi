@@ -1,0 +1,244 @@
+
+
+
+
+
+
+<head>
+<meta name="viewport" content="initial-scale=1.0;" />
+<title>숭실대학교</title>
+<style type="text/css">
+#root{
+width:100%;
+text-align:center;
+}
+body{text-align:center;}
+#contents{
+margin:0 auto;
+margin-top:100;
+width:400px;
+text-align:left;
+}
+</style>
+<meta name="generator" content="LANKeeper" />
+</head>
+<script type="text/javascript">
+<!--
+  function chgBg(obj) {
+    if(document.form.division[0].checked==true)
+    {
+      
+      document.getElementById('user_id_text').innerHTML = "아이디(학번/직번)";
+      
+      document.getElementById('passwd').innerHTML = "비밀번호";
+
+    } else if(document.form.division[1].checked==true)
+    {
+      document.getElementById('user_id_text').innerHTML = "아이디(E-Mail)";
+      document.getElementById('passwd').innerHTML = '비밀번호'
+
+    }
+  }
+  function entercheck()
+  {
+    if (event.keyCode == 13) {
+      checkdata();
+    }
+  }
+
+  function checkdata()
+  {
+    
+  if(document.form.user_id.value == "" || document.form.user_id.value.length==0)
+  {
+    alert('아이디를 입력하세요.');
+    document.form.user_id.focus();
+    return;
+  }
+  if(document.form.password.value =="" || document.form.password.length==0)
+  {
+    alert('비밀번호를 입력하세요');
+    document.form.password.focus();
+    return;
+  }
+  
+    document.form.action="./userLoginCheck";
+    
+  document.form.submit();
+}
+function idQuery(){
+   var url = "./idQueryM.jsp";
+   var src_width = screen.availWidth / 2;
+   var src_height = screen.availHeight / 2;
+   var myWin = window.open(url, 'pbml_win0', 'toolbar=no,location=no,directories=no, status=no,menubar=no,resizable=no,scrollbars=no,width='+src_width+',height='+src_height+',top='+src_width+',left='+src_height);
+
+}
+function temporary() {
+  myForm = document.form;
+  myForm.action="./tempLoginM.jsp";
+  myForm.submit();
+  return;
+}
+
+
+function userReq() {
+  myForm = document.form;
+  myForm.action="./userReqM.jsp";
+  myForm.submit();
+  return;
+}
+function guestReq(){
+  myForm = document.form;
+  myForm.action = "./guestReqM.jsp";
+  myForm.submit();
+  return;
+}
+
+function showMacAddress(){
+  document.form.lanSysInfo.GetSysInfo();
+  document.form.pcmac.value = document.form.lanSysInfo.MACAddress;
+  document.form.pcip.value = document.form.lanSysInfo.IPAddress;
+}
+//-->
+</script>
+<body>
+<div id='root'>
+<div id='contents'>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <form name="form" method="post">
+  <input type="hidden" name="ipaddress" value="043.230.001.203"/>
+  <input type="hidden" name="macaddress" value="90:9F:33:EB:67:2D"/>
+  <input type="hidden" name="vlantag" value="0303"/>
+  <input type="hidden" name="sysid" value="0013"/>
+  <input type="hidden" name="fwurl" value="nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz"/>
+  <input type="hidden" name="mobile" value="M"/>
+  <tr>
+    <td height="80" align="center" valign="middle">
+      <table border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td valign="middle">
+          
+          <img alt="" src="./kraimages/ssu.jpg" width="460" height="80" border="0"/>
+          
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width="400" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td align="left">
+            네트워크 사용을 위한 로그인 화면입니다.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width="400" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td align="left">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <table width="400" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td align="right">
+            <img alt="" src="./kraimages/btn_search.jpg" width="57" height="26" onclick="javascript:idQuery();" style="cursor:hand;">
+            <img alt="" src="./kraimages/btn_temppw2.jpg" width="82" height="26" onclick="javascript:temporary();" style="cursor:hand;">
+            <img src="./kraimages/spacer.gif" width="3" height="26" border="0" alt="">
+            <img src="./kraimages/inner_req.gif" width="90" height="26" onclick="javascript:userReq();" style="cursor:hand;" alt=""/>
+            <img src="./kraimages/spacer.gif" width="3" height="26" border="0" alt="">
+            <img src="./kraimages/guest_req.jpg" width="80" height="26" onclick="javascript:guestReq();" style="cursor:hand;" alt="">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <table width="400" border="1" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td align="center" bgcolor="#d0ffd0">
+            <input type="radio" name="division" value="inner" checked="checked" onclick="javascript:chgBg(1);"/>내부인
+            <input type="radio" name="division" value="outer" onclick="javascript:chgBg(2);"/>외부인
+          </td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#d0ffd0">
+          <table width="" border="0" cellpadding="0" cellspacing="0" class="black1" align="center">
+          <tr>
+            <td rowspan="2">
+              <img src="./kraimages/lock.png" width="38" height="43" border="0" style="cursor:pointer" alt="">
+            </td>
+            <td width="140" height="23" align="left" valign="middle">
+              
+              <div id="user_id_text" style="float:left;">아이디(학번/직번)</div>  <!-- 숭실대의 경우 학번 / 직번 으로 표기-->
+              
+            </td>
+            <td width="146" height="23" align="left" valign="middle">
+              
+              <input name="user_id" class="form1" type="text" maxlength="" style="width:137px;">
+              
+            </td>
+            <td rowspan="2">
+              <img src="./kraimages/btn_login_1.jpg" width="65" height="41" border="0" style="cursor:pointer" onclick="JavaScript:checkdata();" alt="입렵한 정보를 이용하여 로그인합니다.">
+            </td>
+          </tr>
+          <tr>
+            <td width="66" height="23" align="left" valign="top">
+              <div id="passwd" style="float:left">Password</div>
+            </td>
+            <td width="146" height="23" align="left" valign="top">
+              <input name="password" class="form1" type="password" maxlength="" style="width:137px;" title="비밀번호 입력" onkeypress="JavaScript:entercheck();">
+            </td>
+          </tr>
+          </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width="400" border="0" cellpadding="0" cellspacing="0" align="center">
+        
+        <tr>
+          <td class="text8">
+            ※ 2016년 입학생 아이디는 학번이며, 패스워드는 생년월일 8자리입니다.(예 19XXXXXX)<br />
+            아이디가 없으신 분은 숭실인을 클릭하여 신청해 주시기 바랍니다.
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width="400" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td height="25" align="center" valign="middle"><font color="#666666">
+          
+            지식정보처 정보화팀 네트워크 유지보수실<br/>820-0980,0979
+          
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  </form>
+</table>
+</div>
+</div>
+</body>
+</html>
