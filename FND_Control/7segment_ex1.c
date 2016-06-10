@@ -46,7 +46,7 @@ void set8(uint8_t value){
 		digitalWrite(SHR_CLK, 0);
 		digitalWrite(SHR_CLK, 1);
 		
-		delay(100);
+		delay(1000);
 	}
 	// latch
 	digitalWrite(STR_CLK, 0);
@@ -71,6 +71,7 @@ int main(){
 		fprintf(stderr, "\n");
 		set8(arr[i]);
 		delay(1000);
+		getchar();
 		fprintf(stderr, "\n");
 	}
 	return 1;
